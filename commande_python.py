@@ -1,3 +1,5 @@
+  GNU nano 8.2                   commande_python.py                   Modified
+  GNU nano 8.2                   commande_python.py
 from netmiko import ConnectHandler
 
 cisco_router = {
@@ -16,6 +18,4 @@ conn = ConnectHandler(**cisco_router)
 conn.enable()
 output = conn.send_config_set(commands)
 print(output)
-conn.disconnect()
 
-print("Configuration terminée.")
