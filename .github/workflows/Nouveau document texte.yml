@@ -1,31 +1,4 @@
-name: Automate Python Command
-
-on:
-  push:
-    branches:
-      - master  # Déclenche l'action lorsqu'un push est effectué sur la branche master
-
-jobs:
-  run-python-command:
-    runs-on: ubuntu-24.04  # L'environnement Ubuntu
-
-    steps:
-    # Étape 1: Récupérer le code source du dépôt
-    - name: Checkout repository
-      uses: actions/checkout@v2
-
-    # Étape 2: Configurer Python
-    - name: Set up Python
-      uses: actions/setup-python@v2
-      with:
-        python-version: '3.x'  # Remplacez par la version exacte de Python que vous utilisez si nécessaire
-
-    # Étape 3: Installer netmiko directement avec pip
-    - name: Install netmiko
-      run: |
-        python -m pip install --upgrade pip  # Met à jour pip
-        pip install netmiko  # Installe netmiko
-
-    # Étape 4: Exécuter le script Python
-    - name: Run Python command
-      run: python commande_python.py  # Remplacez par le nom de votre script Python
+steps:
+- name: Ping router to test connectivity
+    run :
+     ping -c 4 192.168.30.138 
