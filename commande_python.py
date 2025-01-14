@@ -2,7 +2,7 @@ from netmiko import ConnectHandler
 
 cisco_router = {
     'device_type': 'cisco_ios',
-    'host': 'ssh -o HostKeyAlgorithms=+ssh-rsa -o PubKeyAcceptedAlgorithms=+ssh-rsa admin@192.168.30.138',
+    'host': '192.168.30.138',
     'username': 'admin',
     'password': 'admin123',
     'secret': 'admin123',
