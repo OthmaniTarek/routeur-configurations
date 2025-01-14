@@ -1,0 +1,27 @@
+name: Automate Python Command
+
+on:
+  push:
+    branches:
+      - master  # Déclenche l'action lorsqu'un push est fait sur la branche master
+
+jobs:
+  run-python-command:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'  # Remplacez '3.x' par la version de Python que vous utilisez
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt  # Assurez-vous d'avoir un fichier requirements.txt si vous avez des dépendances
+
+    - name: Run Python command
+      run: python commande_python.py  # Exécute le script Python
