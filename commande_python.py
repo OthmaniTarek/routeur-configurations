@@ -1,5 +1,3 @@
-  GNU nano 8.2                   commande_python.py                   Modified
-  GNU nano 8.2                   commande_python.py
 from netmiko import ConnectHandler
 
 cisco_router = {
